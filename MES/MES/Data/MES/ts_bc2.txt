@@ -1,0 +1,57 @@
+Area
+(
+    {
+        x1 = 0
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0
+        z2 = 0.6
+        lambda = 79
+        rho = 7700
+        cw = 478
+        qv = 0
+    }
+);
+	
+Conditions
+(
+    T0 = 293
+
+    BoundaryCondition1
+
+    BoundaryCondition2
+    {
+        x1 = 0
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0
+        z2 = 0
+        qs = 200000
+    }
+
+    BoundaryCondition3
+);
+	
+Time
+(
+	dt = 1
+	tc = 400
+);
+	
+Density
+(
+    lvl_x = 1
+    lvl_y = 1
+    lvl_z = 5
+);
+	
+Points
+(
+    {
+        x = 0.2
+        y = 0.25
+        z = 0.3
+    }
+);

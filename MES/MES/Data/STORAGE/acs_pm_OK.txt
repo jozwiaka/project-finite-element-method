@@ -1,0 +1,131 @@
+Area
+(
+    {
+        x1 = 0
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0
+        z2 = 0.6
+        lambda = 79
+        rho = 7700
+        cw = 478
+        qv = 0
+    }
+);
+	
+Conditions
+(
+    T0 = 293
+
+    BoundaryCondition1
+    {
+        x1 = 0
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0.6
+        z2 = 0.6
+        T = 293
+    }
+    {
+        x1 = 0
+        x2 = 0
+        y1 = 0.
+        y2 = 0.4
+        z1 = 0
+        z2 = 0.5
+        T = 293
+    }
+    {
+        x1 = 0.4
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0
+        z2 = 0.6
+        T = 293
+    }
+    {
+        x1 = 0.0001
+        x2 = 0.3999
+        y1 = 0
+        y2 = 0
+        z1 = 0.0001
+        z2 = 0.5999
+        T = 293
+    }
+    {
+        x1 = 0.0001
+        x2 = 0.3999
+        y1 = 0.5
+        y2 = 0.5
+        z1 = 0.0001
+        z2 = 0.5999
+        T = 293
+    }
+
+    BoundaryCondition2
+
+    BoundaryCondition3
+);
+	
+Time
+(
+	dt = 1
+	tc = 4000
+);
+	
+Density
+(
+    lvl_x = 1
+    lvl_y = 1
+    lvl_z = 5
+);
+	
+Points
+(
+    {
+        x = 0.2
+        y = 0.25
+        z = 0.3
+    }
+);
+
+Identification
+(
+    Am = 3000
+    f0 = 0.0005
+    y0 = 2000
+);
+
+AutomaticControlSystem
+(
+    yIn = 320
+    
+    PID
+    (
+        kp = 10
+        Ti = 1000
+        Td = 2
+        Smin = -5000
+        Smax = 5000
+        Tp = 0.1
+    );
+);
+
+PeltierModule
+(
+    {
+        x1 = 0
+        x2 = 0.4
+        y1 = 0
+        y2 = 0.5
+        z1 = 0
+        z2 = 0
+
+        alpha = 0.07
+        K = 0.0015
+        R = 0.0002
+    }
+);
